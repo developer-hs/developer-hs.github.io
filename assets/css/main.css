@@ -1,0 +1,463 @@
+.img-box {
+  font-size: 0;
+  box-sizing: border-box;
+}
+.title {
+  font-family: "LuckiestGuy";
+}
+header {
+  height: 95px;
+  position: relative;
+  padding: 0 12px;
+}
+
+header .logo img {
+  width: 115px;
+}
+
+header .nav_area {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+header .nav_area .nav {
+  font-size: 1.8rem;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+header .logo {
+  position: absolute;
+  width: 115px;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.banner_area {
+  z-index: 1;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  padding: 120px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: url(/assets/imgs/main_bg.svg) no-repeat center / 100%;
+}
+.banner_area .signboard_area {
+  width: 70%;
+  border: 4px solid #0079ff;
+  box-shadow: 10px 10px 0px 0px #0079ff;
+  background-color: #ffeeca;
+}
+.banner_area .signboard {
+  position: relative;
+  font-size: 8rem;
+  font-family: "LuckiestGuy";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 74px 30px;
+  width: 100%;
+}
+.contact_area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: "Macondo";
+  font-size: 6.8rem;
+  background: #00dfa2;
+  box-shadow: 13px 8px 0px 0px #0079ff;
+  transform: rotate(-15deg) translate3d(50%, 80%, 0);
+  flex-shrink: 0;
+  position: absolute;
+  padding: 30px 20px;
+  color: #fff;
+}
+.contact_area img {
+  width: 200px;
+}
+
+.about_area {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+}
+
+.about_area .content_area {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  width: 70%;
+  border: 1px solid #0079ff;
+  background-color: #fff;
+  padding: 62px 30px;
+}
+
+.about_area .content_area .title {
+  font-size: 4.8rem;
+  margin-bottom: 30px;
+}
+
+.about_area .content_area .content {
+  padding: 0 30px;
+  font-size: 1.4rem;
+  font-family: "SBAggro";
+  line-height: 26px;
+}
+.portfolio_area {
+  padding: 0 80px 108px;
+}
+.portfolio_area .title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5.6rem;
+  padding: 52px 0 100px;
+}
+
+.portfolio_area .portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.portfolio_area .portfolio .item {
+  cursor: pointer;
+  width: 30%;
+  border: 1px solid #000;
+  background: var(--color-danger);
+  box-shadow: 10px 10px 0px 0px #000;
+  transition: all 1s;
+}
+.portfolio_area .portfolio .item:nth-child(n + 4) {
+  margin-top: 60px;
+}
+
+.portfolio_area .portfolio .item.on {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.portfolio_area .portfolio .item.off {
+  transform: scale(0.95);
+  opacity: 0.65;
+}
+
+.portfolio_area .portfolio .item img {
+  width: 100%;
+}
+.portfolio_area .portfolio .item .title {
+  font-family: "SBAggro";
+  font-weight: 700;
+  font-size: 1.6rem;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.portfolio_area .portfolio .item .description {
+  background-color: #f25a5a;
+  padding: 20px 16px;
+}
+
+.portfolio_area .portfolio .item .stack_area {
+  flex-wrap: wrap;
+  display: flex;
+  padding: 0 0 16px 0;
+}
+.portfolio_area .portfolio .item .stack {
+  font-family: "SBAggro";
+  font-weight: 300;
+  margin: 8px 4px 0 4px;
+  padding: 4px 6px;
+  border-radius: 1.25rem;
+  background: #0079ff;
+  box-shadow: 1px 1px 0px 0px #000;
+  color: #fff;
+}
+
+.portfolio_area .portfolio .item .more_view {
+  width: 100%;
+  justify-content: space-between;
+  font-family: "SBAggro";
+  font-weight: 300;
+  display: flex;
+  line-height: 14px;
+}
+
+.portfolio_area .portfolio .item .more_view img {
+  align-items: center;
+  width: 16px;
+}
+
+.circle_box {
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.marquee-for-main {
+  transform: rotate(-30deg);
+  z-index: 0;
+  position: absolute;
+  margin: 30px 0 72px;
+  height: 42px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.marquee-for-main .track {
+  color: var(--color-danger);
+  font-size: 2rem;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 30s linear infinite;
+  font-weight: 700;
+  font-size: 6.4rem;
+  font-family: "LuckiestGuy";
+}
+
+.about_area .marquee-for-main_1 {
+  transform: rotate(-15deg);
+  left: -90px;
+  top: 60px;
+}
+
+.about_area .marquee-for-main_1 .track {
+  animation: marquee 24s linear infinite;
+}
+
+.about_area .marquee-for-main_2 {
+  right: -300px;
+  bottom: 0;
+}
+
+.contact_input_area {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact_input_area .title {
+  font-size: 5.6rem;
+  margin: 0 0 20px;
+}
+.contact_input_area input,
+.contact_input_area textarea {
+  font-family: "SBAggro";
+  font-size: 1.4rem;
+  width: 50%;
+  height: 40px;
+  border: 4px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  outline: none;
+  background-color: var(--color-bg);
+  margin-bottom: 2rem;
+  padding: 4px 12px;
+}
+
+.contact_input_area textarea {
+  padding: 18px 12px;
+  line-height: 22px;
+  height: 100px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.contact_input_area .submit-btn {
+  right: 20%;
+  bottom: -5%;
+  transform: translate3d(-50%, 30%, 0) rotate(-10deg);
+  position: absolute;
+}
+
+.scroll_up_btn {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  animation: bounce 0.8s alternate infinite;
+}
+.write_date_area {
+  display: none;
+  text-transform: uppercase;
+  font-family: "SBAggro";
+  width: 50%;
+  justify-content: end;
+  padding: 0 12px;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+.write_date_area.on {
+  display: flex;
+}
+
+.write_date_area span:nth-child(1) {
+  margin-right: 8px;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+/* 스마트폰 세로 + 스마트폰 가로 + 테블릿 세로 */
+@media all and (max-width: 960px) {
+  .banner_area .signboard {
+    font-size: 3.5rem;
+  }
+
+  .contact_area {
+    padding: 15px 15px;
+  }
+  .contact_area img {
+    width: 100px;
+  }
+  .banner_area .signboard {
+    padding: 50px 20px;
+  }
+
+  header .logo {
+    left: initial;
+    right: 22px;
+    transform: translate3d(0, -50%, 0);
+  }
+  .about_area .content_area {
+    padding: 40px 20px;
+  }
+
+  .about_area .content_area .title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+
+  .portfolio_area .portfolio .item {
+    width: 45%;
+  }
+
+  .portfolio_area .portfolio .item:nth-child(n + 4) {
+    margin-top: 0;
+  }
+  .portfolio_area .portfolio .item:nth-child(n + 3) {
+    margin-top: 40px;
+  }
+  .portfolio_area {
+    padding: 0 40px 60px;
+  }
+  .portfolio_area .title {
+    font-size: 5rem;
+    padding: 40px 0 60px;
+  }
+
+  .contact_input_area {
+    box-sizing: border-box;
+    padding: 30px 20px 50px;
+  }
+  .write_date_area,
+  .contact_input_area input,
+  .contact_input_area textarea {
+    width: 100%;
+  }
+
+  .scroll_up_btn {
+    top: initial;
+    bottom: -50px;
+    right: initial;
+    left: 20px;
+    transform: none;
+  }
+
+  .contact_input_area .submit-btn {
+    right: 20px;
+    bottom: 0;
+    transform: translate3d(0, 0, 0) rotate(-10deg);
+  }
+}
+
+@media all and (max-width: 575px) {
+  .about_area .content_area {
+    width: 80%;
+  }
+  .about_area .content_area .content {
+    padding: 0 20px;
+  }
+  .contact_area {
+    right: 30px;
+  }
+  header {
+    padding: 0;
+  }
+  header .logo {
+    right: initial;
+    left: 10px;
+  }
+  header .nav_area {
+    justify-content: end;
+  }
+
+  .portfolio_area .portfolio .item {
+    width: 100%;
+  }
+
+  .portfolio_area .portfolio .item:nth-child(n + 3) {
+    margin-top: 0;
+  }
+  .portfolio_area .portfolio .item:nth-child(n + 2) {
+    margin-top: 40px;
+  }
+
+  .portfolio_area .title {
+    padding: 30px 0 50px;
+  }
+
+  .about_area .marquee-for-main_1 {
+    transform: rotate(-15deg);
+    left: -20px;
+    top: 0;
+  }
+
+  .marquee-for-main {
+    width: 130%;
+    max-width: 130%;
+  }
+
+  .banner_area {
+    padding: 80px 0;
+  }
+}

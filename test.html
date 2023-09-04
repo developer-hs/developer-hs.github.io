@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>별 모양 패턴 효과</title>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      class Star {
+        constructor(x, y, size) {
+          this.x = x;
+          this.y = y;
+          this.size = size;
+        }
+
+        draw() {
+          let angle = (2 * Math.PI) / 5;
+          let radius = this.size;
+
+          ctx.beginPath();
+          ctx.moveTo(this.x, this.y - radius);
+
+          for (let i = 1; i < 5; i++) {
+            radius = this.size;
+            ctx.lineTo(this.x + radius * Math.sin(i * angle), this.y - radius * Math.cos(i * angle));
+          }
+
+          ctx.closePath();
+          ctx.fillStyle = "steelblue";
+          ctx.fill();
+        }
+
+        update(mouse) {
+          const distanceToMouse = Math.hypot(this.x - mouse.x, this.y - mouse.y);
+          const targetSize = distanceToMouse < 100 ? (100 - distanceToMouse) / 4 : 20;
+          this.size += (targetSize - this.size) * 0.1;
+        }
+      }
+      class Circle {
+        constructor(x, y, size) {
+          this.x = x;
+          this.y = y;
+          this.size = size;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+          ctx.fillStyle = "indianred";
+          ctx.fill();
+        }
+
+        update(mouse) {
+          const distanceToMouse = Math.hypot(this.x - mouse.x, this.y - mouse.y);
+          const targetSize = distanceToMouse < 100 ? (100 - distanceToMouse) / 4 : 20;
+          this.size += (targetSize - this.size) * 0.1;
+        }
+      }
+      function createPattern() {
+        const shapes = [];
+
+        const patternSize = 50;
+        const margin = 20;
+        const numHorizontal = Math.ceil(canvas.width / (patternSize + margin));
+        const numVertical = Math.ceil(canvas.height / (patternSize + margin));
+
+        for (let x = 0; x < numHorizontal; x++) {
+          for (let y = 0; y < numVertical; y++) {
+            const posX = x * (patternSize + margin) + patternSize / 2 + margin / 2;
+            const posY = y * (patternSize + margin) + patternSize / 2 + margin / 2;
+            const shape = (x + y) % 2 === 0 ? new Star(posX, posY, 20) : new Circle(posX, posY, 20);
+            shapes.push(shape);
+          }
+        }
+
+        return shapes;
+      }
+
+      const shapes = createPattern();
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        shapes.forEach((shape) => {
+          shape.update(mouse);
+          shape.draw();
+        });
+
+        requestAnimationFrame(animate);
+      }
+      const mouse = {
+        x: undefined,
+        y: undefined,
+      };
+
+      window.addEventListener("mousemove", (event) => {
+        mouse.x = event.x;
+        mouse.y = event.y;
+      });
+
+      animate();
+    </script>
+  </body>
+</html>

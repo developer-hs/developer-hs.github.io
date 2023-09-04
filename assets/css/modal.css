@@ -1,0 +1,404 @@
+.modal_area {
+  overflow: hidden;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  background: #0079ff url("/assets/imgs/circle_bg.svg") no-repeat center / cover;
+}
+
+.modal_area.on {
+  display: flex;
+}
+
+.modal {
+  border-top: 3px solid #000;
+  border-left: 3px solid #000;
+  border-bottom: 2px solid #000;
+  left: 5%;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  box-shadow: 7px 7px 0 0 rgba(0, 0, 0, 1);
+  position: fixed;
+  width: 65%;
+  height: 85%;
+  z-index: 2;
+}
+
+.modal .pc,
+.modal .mob {
+  height: 100%;
+  display: none;
+}
+
+.modal .pc.on,
+.modal .mob.on {
+  display: block;
+}
+
+.modal .pc .swiper-slide {
+  width: calc(100% + 1px) !important;
+  margin-top: -2px;
+  margin-left: -1px;
+}
+
+.modal .swiper-slide.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .pc.mob_st .swiper-slide,
+.modal .mob .swiper-slide {
+  background-color: #000;
+}
+
+.modal .pc.mob_st .swiper-slide picture,
+.modal .mob .swiper-slide picture {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .pc.mob_st .swiper-slide img,
+.modal .mob .swiper-slide img {
+  width: 40%;
+}
+.modal .swiper-container {
+  background-color: #000;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.modal .swiper-container::-webkit-scrollbar {
+  width: 10px;
+}
+.modal .swiper-container::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+}
+.modal .swiper-container::-webkit-scrollbar-track {
+  background-color: var(--color-green);
+}
+.modal img {
+  width: 100%;
+}
+
+.modal .swiper-button-next,
+.modal .swiper-button-prev {
+  position: fixed;
+}
+
+.modal .swiper-button-next {
+  right: -50px;
+}
+.modal .swiper-button-prev {
+  left: -50px;
+  right: inherit;
+}
+
+.modal_area .detail {
+  height: 100%;
+  padding: 50px 30px;
+}
+
+.modal_area .detail::-webkit-scrollbar {
+  width: 10px;
+}
+.modal_area .detail::-webkit-scrollbar-thumb {
+  background-color: var(--color-danger);
+  border-radius: 10px;
+}
+.modal_area .detail::-webkit-scrollbar-track {
+  background-color: var(--color-green);
+}
+
+.modal_area .detail_area {
+  position: fixed;
+  right: 5%;
+  top: 50%;
+  border-right: 3px solid #000;
+  border-top: 3px solid #000;
+  border-bottom: 2px solid #000;
+  transform: translate3d(0, -50%, 0);
+  box-shadow: 4px 7px 0 0 rgba(0, 0, 0, 1);
+  z-index: 2;
+  width: 25%;
+  height: 85%;
+  background-color: #ffeeca;
+}
+
+.modal_area .name,
+.modal_area .title,
+.modal_area .stack {
+  font-family: "SBAggro";
+}
+
+.modal_area .name {
+  padding: 0 0 32px;
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+
+.modal_area .title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 0 0 16px;
+}
+
+.modal_area .stacks {
+  display: flex;
+  padding: 0 0 32px;
+}
+
+.modal_area .stack {
+  color: #fff;
+  border-radius: 20px;
+  margin: 0 4px;
+  padding: 4px;
+  background-color: var(--color-primary);
+  box-shadow: 1px 1px 0px 0px #000;
+}
+
+.modal_area .note {
+  position: relative;
+  padding: 0 0 12px 0;
+  font-size: 1.6rem;
+}
+
+.modal_area .note:nth-last-child(1) {
+  padding-bottom: 32px;
+}
+
+.modal_area .note span {
+  padding: 0 0 0 16px;
+  display: block;
+  font-weight: 500;
+}
+
+.modal_area .note::before {
+  top: 3px;
+  position: absolute;
+  content: "⦁";
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.site_area {
+  font-size: 1.6rem;
+}
+
+.site_area a {
+  text-decoration: underline;
+}
+.modal_area .swiper-button-next {
+  top: initial;
+  bottom: 10px;
+  left: initial;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.2) url(/assets/imgs/icons/modal_right_arrow.svg) no-repeat center;
+}
+
+.modal_area .swiper-button-prev {
+  top: initial;
+  bottom: 10px;
+  left: initial;
+  right: 110px;
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.2) url(/assets/imgs/icons/modal_left_arrow.svg) no-repeat center;
+}
+
+.modal_area .swiper-pagination-fraction {
+  font-family: "LuckiestGuy";
+  width: max-content;
+  bottom: 20px;
+  right: 70px;
+  font-size: 1.4rem;
+  left: initial;
+}
+
+.modal_area.pc .mob.swiper-pagination-fraction,
+.modal_area.pc .mob.swiper-button-prev,
+.modal_area.pc .mob.swiper-button-next {
+  display: none;
+}
+
+.modal_area.mob .pc.swiper-pagination-fraction,
+.modal_area.mob .pc.swiper-button-prev,
+.modal_area.mob .pc.swiper-button-next {
+  display: none;
+}
+
+.modal_area .swiper-button-prev:after,
+.modal_area .swiper-rtl .swiper-button-next:after {
+  content: "";
+}
+
+.modal_area .swiper-button-next:after,
+.modal_area .swiper-rtl .swiper-button-prev:after {
+  content: "";
+}
+
+.modal_area .change_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 2px 0 #000;
+  cursor: pointer;
+  z-index: 2;
+  width: 110px;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  transform: translate3d(-50%, 0, 0);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: all 1s;
+}
+
+.modal_area .change_btn.active {
+  background-color: rgba(0, 0, 0, 1);
+  transform: translate3d(-50%, 0, 0) rotate3d(0, 1, 0, 3rad);
+}
+
+.modal_area .change_btn.active:hover {
+  transform: translate3d(-50%, 0, 0) scale(1.05) rotate3d(0, 1, 0, 3rad);
+}
+
+.modal_area .change_btn.active img {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(318deg) brightness(111%) contrast(101%);
+}
+
+.modal_area .change_btn:hover {
+  transform: translate3d(-50%, 0, 0) scale(1.05);
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.modal_area .change_btn img {
+  filter: invert(0%) sepia(6%) saturate(7474%) hue-rotate(222deg) brightness(110%) contrast(95%);
+}
+.modal_area .change_btn:hover img {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(318deg) brightness(111%) contrast(101%);
+}
+
+.modal_area .change_btn img {
+  width: 100%;
+  display: none;
+}
+.modal_area .change_btn[data-current-type="pc"] .phone_ico {
+  display: block;
+}
+
+.modal_area .change_btn[data-current-type="mob"] .pc_ico {
+  display: block;
+}
+
+.modal_area .change_btn[data-current-type="pc"].active .phone_ico {
+  display: none;
+}
+
+.modal_area .change_btn[data-current-type="pc"].active .pc_ico {
+  display: block;
+}
+
+.modal_area .change_btn[data-current-type="mob"].active .pc_ico {
+  display: none;
+}
+
+.modal_area .change_btn[data-current-type="mob"].active .phone_ico {
+  display: block;
+}
+
+@media all and (max-width: 960px) {
+  .modal {
+    left: 50%;
+    top: 10%;
+    transform: translate3d(-50%, 0, 0);
+    box-shadow: none;
+    border-right: 3px solid #000;
+    box-shadow: 4px 7px 0 0 rgba(0, 0, 0, 1);
+    border-bottom: none;
+    position: fixed;
+    width: 80%;
+    height: 50%;
+    z-index: 2;
+  }
+
+  .modal_area .detail_area {
+    position: fixed;
+    left: 50%;
+    right: initial;
+    top: 60%;
+    border-right: 3px solid #000;
+    border-left: 3px solid #000;
+    border-top: none;
+    border-bottom: 2px solid #000;
+    transform: translate3d(-50%, 0, 0);
+    box-shadow: 4px 7px 0 0 rgba(0, 0, 0, 1);
+    z-index: 2;
+    width: 80%;
+    height: 30%;
+    background-color: #ffeeca;
+  }
+
+  .modal_area .detail {
+    padding: 24px 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .modal_area .name {
+    font-size: 2rem;
+  }
+
+  .modal_area .title {
+    font-size: 1.6rem;
+  }
+  .modal_area .note {
+    font-size: 1.4rem;
+  }
+
+  .modal_area .swiper-button-next {
+    top: initial;
+    bottom: 10px;
+    left: initial;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.2) url(/assets/imgs/icons/modal_right_arrow.svg) no-repeat center / 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .modal_area .swiper-button-prev {
+    top: initial;
+    bottom: 10px;
+    left: initial;
+    right: 110px;
+    background: rgba(0, 0, 0, 0.2) url(/assets/imgs/icons/modal_left_arrow.svg) no-repeat center / 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .modal_area .swiper-pagination-fraction {
+    bottom: 20px;
+    right: 70px;
+  }
+
+  .modal_area .change_btn {
+    width: 80px;
+    padding: 15px;
+    bottom: 0;
+  }
+}
