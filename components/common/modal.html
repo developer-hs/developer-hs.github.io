@@ -1,4 +1,7 @@
-<div class="modal">
+<div class="page_btn" id="prevPageBtn">prev</div>
+<div class="page_btn" id="nextPageBtn">next</div>
+
+<div class="image_area">
   <div class="pc on">
     <div class="swiper-container">
       <div class="swiper-wrapper"></div>
@@ -36,7 +39,7 @@
     </div>
     <div class="site_area">
       <div class="title">SITE</div>
-      <div><a href="javascript:void();" target="_blank">스키니피그</a></div>
+      <div><a href="javascript:void();" target="_blank"></a></div>
     </div>
   </div>
   <div class="pc swiper-pagination"></div>
@@ -62,6 +65,7 @@
 
     modalClose = (elm) => {
       if (elm.id === "importedModal") {
+        document.body.style.overflow = "auto"
         this.getModalAreaElm().classList.remove("on");
         const swiperWrapElms = document.querySelectorAll(".modal_area .swiper-wrapper");
         swiperWrapElms.forEach((swiperWrapElm) => {
@@ -69,6 +73,7 @@
         });
       }
     };
+
     modalCloseHandler = () => {
       this.getModalAreaElm().addEventListener("click", (e) => {
         this.modalClose(e.target);
@@ -111,13 +116,13 @@
       changeBtnElm.addEventListener("click", this.changeViewType);
     };
 
-    initHandler = () => {
+    handler = () => {
       this.modalCloseHandler();
       this.chageTypeBtnHandler();
     };
 
     init = () => {
-      this.initHandler();
+      this.handler();
     };
   }
 

@@ -3,7 +3,7 @@
   display: none;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
@@ -15,7 +15,7 @@
   display: flex;
 }
 
-.modal {
+.image_area {
   border-top: 3px solid #000;
   border-left: 3px solid #000;
   border-bottom: 2px solid #000;
@@ -26,50 +26,51 @@
   position: fixed;
   width: 65%;
   height: 85%;
+  max-height: 1792px;
   z-index: 2;
 }
 
-.modal .pc,
-.modal .mob {
+.image_area .pc,
+.image_area .mob {
   height: 100%;
   display: none;
 }
 
-.modal .pc.on,
-.modal .mob.on {
+.image_area .pc.on,
+.image_area .mob.on {
   display: block;
 }
 
-.modal .pc .swiper-slide {
+.image_area .pc .swiper-slide {
   width: calc(100% + 1px) !important;
   margin-top: -2px;
   margin-left: -1px;
 }
 
-.modal .swiper-slide.flex-center {
+.image_area .swiper-slide.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modal .pc.mob_st .swiper-slide,
-.modal .mob .swiper-slide {
+.image_area .pc.mob_st .swiper-slide,
+.image_area .mob .swiper-slide {
   background-color: #000;
 }
 
-.modal .pc.mob_st .swiper-slide picture,
-.modal .mob .swiper-slide picture {
+.image_area .pc.mob_st .swiper-slide picture,
+.image_area .mob .swiper-slide picture {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.modal .pc.mob_st .swiper-slide img,
-.modal .mob .swiper-slide img {
+.image_area .pc.mob_st .swiper-slide img,
+.image_area .mob .swiper-slide img {
   width: 40%;
 }
-.modal .swiper-container {
+.image_area .swiper-container {
   background-color: #000;
   position: relative;
   overflow-y: scroll;
@@ -77,29 +78,29 @@
   height: 100%;
 }
 
-.modal .swiper-container::-webkit-scrollbar {
+.image_area .swiper-container::-webkit-scrollbar {
   width: 10px;
 }
-.modal .swiper-container::-webkit-scrollbar-thumb {
+.image_area .swiper-container::-webkit-scrollbar-thumb {
   background-color: var(--color-primary);
   border-radius: 10px;
 }
-.modal .swiper-container::-webkit-scrollbar-track {
+.image_area .swiper-container::-webkit-scrollbar-track {
   background-color: var(--color-green);
 }
-.modal img {
+.image_area img {
   width: 100%;
 }
 
-.modal .swiper-button-next,
-.modal .swiper-button-prev {
+.image_area .swiper-button-next,
+.image_area .swiper-button-prev {
   position: fixed;
 }
 
-.modal .swiper-button-next {
+.image_area .swiper-button-next {
   right: -50px;
 }
-.modal .swiper-button-prev {
+.image_area .swiper-button-prev {
   left: -50px;
   right: inherit;
 }
@@ -299,32 +300,77 @@
   width: 100%;
   display: none;
 }
-.modal_area .change_btn[data-current-type="pc"] .phone_ico {
+.modal_area .change_btn[data-current-type="mob"] .phone_ico {
   display: block;
 }
 
-.modal_area .change_btn[data-current-type="mob"] .pc_ico {
+.modal_area .change_btn[data-current-type="pc"] .pc_ico {
   display: block;
-}
-
-.modal_area .change_btn[data-current-type="pc"].active .phone_ico {
-  display: none;
-}
-
-.modal_area .change_btn[data-current-type="pc"].active .pc_ico {
-  display: block;
-}
-
-.modal_area .change_btn[data-current-type="mob"].active .pc_ico {
-  display: none;
 }
 
 .modal_area .change_btn[data-current-type="mob"].active .phone_ico {
+  display: none;
+}
+
+.modal_area .change_btn[data-current-type="mob"].active .pc_ico {
   display: block;
 }
 
+.modal_area .change_btn[data-current-type="pc"].active .pc_ico {
+  display: none;
+}
+
+.modal_area .change_btn[data-current-type="pc"].active .phone_ico {
+  display: block;
+}
+
+.swiper-slide img {
+  opacity: 0;
+  transition: 0.25s ease;
+}
+.swiper-slide.swiper-slide-active img {
+  opacity: 1;
+}
+
+.page_btn,
+.page_btn_blur {
+  width: 70px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}
+
+.page_btn {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "LuckiestGuy";
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.page_btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.page_btn#prevPageBtn {
+  left: 0;
+  border-radius: 0 150px 150px 0;
+}
+.page_btn#nextPageBtn {
+  right: 0;
+  border-radius: 150px 0 0 150px;
+}
+
 @media all and (max-width: 960px) {
-  .modal {
+  .image_area {
     left: 50%;
     top: 10%;
     transform: translate3d(-50%, 0, 0);

@@ -1,5 +1,5 @@
 <!-- line 1 -->
-<div class="portfolio">
+<div class="portfolio" id="portfolio">
   <div class="item" data-item="skinnypig">
     <div class="img-box">
       <img src="/assets/imgs/skinnypig/skn_main.png" alt="스키니피그 메인 이미지" />
@@ -125,7 +125,8 @@
 <script>
   let prevPcSwiper;
   let prevMobSwiper;
-  const imgPath = "/assets/imgs";
+
+  const IMG_PATH = "/assets/imgs";
   const details = {
     skinnypig: {
       title: "스키니피그 홈페이지 전체 리뉴얼",
@@ -136,14 +137,14 @@
         "사용자 이탈율 감소를 위한 홈페이지 최적화",
       ],
       pc: [
-        `${imgPath}/skinnypig/details/pc/skn_pc_main`,
-        `${imgPath}/skinnypig/details/pc/skn_pc_prd_list`,
-        `${imgPath}/skinnypig/details/pc/skn_pc_prd_detail`,
+        `${IMG_PATH}/skinnypig/details/pc/skn_pc_main`,
+        `${IMG_PATH}/skinnypig/details/pc/skn_pc_prd_list`,
+        `${IMG_PATH}/skinnypig/details/pc/skn_pc_prd_detail`,
       ],
       mob: [
-        `${imgPath}/skinnypig/details/mob/skn_mob_main`,
-        `${imgPath}/skinnypig/details/mob/skn_mob_prd_list`,
-        `${imgPath}/skinnypig/details/mob/skn_mob_prd_detail`,
+        `${IMG_PATH}/skinnypig/details/mob/skn_mob_main`,
+        `${IMG_PATH}/skinnypig/details/mob/skn_mob_prd_list`,
+        `${IMG_PATH}/skinnypig/details/mob/skn_mob_prd_detail`,
       ],
       site: {
         name: "스키니피그",
@@ -155,14 +156,14 @@
       stacks: ["HTML", "CSS", "JAVASCRIPT", "CAFE24"],
       description: ["주요 페이지 퍼블리싱 및 기능 구현", "스토어 픽업 기능 구현"],
       pc: [
-        `${imgPath}/olola/details/pc/olola_main`,
-        `${imgPath}/olola/details/pc/olola_prd_pickup`,
-        `${imgPath}/olola/details/pc/olola_store_pickup`,
+        `${IMG_PATH}/olola/details/pc/olola_main`,
+        `${IMG_PATH}/olola/details/pc/olola_prd_pickup`,
+        `${IMG_PATH}/olola/details/pc/olola_store_pickup`,
       ],
       mob: [
-        `${imgPath}/olola/details/mob/olola_main`,
-        `${imgPath}/olola/details/mob/olola_prd_pickup`,
-        `${imgPath}/olola/details/mob/olola_store_pickup`,
+        `${IMG_PATH}/olola/details/mob/olola_main`,
+        `${IMG_PATH}/olola/details/mob/olola_prd_pickup`,
+        `${IMG_PATH}/olola/details/mob/olola_store_pickup`,
       ],
       site: {
         name: "오로라렌즈",
@@ -174,16 +175,16 @@
       stacks: ["HTML", "CSS", "JAVASCRIPT", "CAFE24"],
       description: ["홈페이지 전체 제작"],
       pc: [
-        `${imgPath}/dragon/details/pc/dragon_pc_main`,
-        `${imgPath}/dragon/details/pc/dragon_pc_prd_list`,
-        `${imgPath}/dragon/details/pc/dragon_pc_estimate`,
-        `${imgPath}/dragon/details/pc/dragon_pc_guide`,
+        `${IMG_PATH}/dragon/details/pc/dragon_pc_main`,
+        `${IMG_PATH}/dragon/details/pc/dragon_pc_prd_list`,
+        `${IMG_PATH}/dragon/details/pc/dragon_pc_estimate`,
+        `${IMG_PATH}/dragon/details/pc/dragon_pc_guide`,
       ],
       mob: [
-        `${imgPath}/dragon/details/mob/dragon_mob_main`,
-        `${imgPath}/dragon/details/mob/dragon_mob_prd_list`,
-        `${imgPath}/dragon/details/mob/dragon_mob_estimate`,
-        `${imgPath}/dragon/details/mob/dragon_mob_guide`,
+        `${IMG_PATH}/dragon/details/mob/dragon_mob_main`,
+        `${IMG_PATH}/dragon/details/mob/dragon_mob_prd_list`,
+        `${IMG_PATH}/dragon/details/mob/dragon_mob_estimate`,
+        `${IMG_PATH}/dragon/details/mob/dragon_mob_guide`,
       ],
       site: {
         name: "용훈샵",
@@ -195,16 +196,16 @@
       stacks: ["HTML", "CSS", "JAVASCRIPT", "CAFE24"],
       description: ["홈페이지 전체 제작"],
       pc: [
-        `${imgPath}/smart/details/pc/smart_pc_main`,
-        `${imgPath}/smart/details/pc/smart_pc_prd_list`,
-        `${imgPath}/smart/details/pc/smart_pc_about_1`,
-        `${imgPath}/smart/details/pc/smart_pc_about_2`,
+        `${IMG_PATH}/smart/details/pc/smart_pc_main`,
+        `${IMG_PATH}/smart/details/pc/smart_pc_prd_list`,
+        `${IMG_PATH}/smart/details/pc/smart_pc_about_1`,
+        `${IMG_PATH}/smart/details/pc/smart_pc_about_2`,
       ],
       mob: [
-        `${imgPath}/smart/details/mob/smart_mob_main`,
-        `${imgPath}/smart/details/mob/smart_mob_prd_list`,
-        `${imgPath}/smart/details/mob/smart_mob_about_1`,
-        `${imgPath}/smart/details/mob/smart_mob_about_2`,
+        `${IMG_PATH}/smart/details/mob/smart_mob_main`,
+        `${IMG_PATH}/smart/details/mob/smart_mob_prd_list`,
+        `${IMG_PATH}/smart/details/mob/smart_mob_about_1`,
+        `${IMG_PATH}/smart/details/mob/smart_mob_about_2`,
       ],
       site: {
         name: "스마트마케팅",
@@ -215,10 +216,10 @@
       title: "네오테리아 홈페이지 제작",
       stacks: ["HTML", "CSS", "JAVASCRIPT", "CAFE24"],
       description: ["홈페이지 전체 제작", "상품 정렬 구현", "홈페이지 최적화"],
-      pc: [`${imgPath}/neoteria/details/pc/neoteria_pc_main`, `${imgPath}/neoteria/details/pc/neoteria_pc_prd_list`],
+      pc: [`${IMG_PATH}/neoteria/details/pc/neoteria_pc_main`, `${IMG_PATH}/neoteria/details/pc/neoteria_pc_prd_list`],
       mob: [
-        `${imgPath}/neoteria/details/mob/neoteria_mob_main`,
-        `${imgPath}/neoteria/details/mob/neoteria_mob_prd_list`,
+        `${IMG_PATH}/neoteria/details/mob/neoteria_mob_main`,
+        `${IMG_PATH}/neoteria/details/mob/neoteria_mob_prd_list`,
       ],
       site: {
         name: "네오테리아",
@@ -229,10 +230,10 @@
       title: "비비드골프 멤버십 + 대여캘린더",
       stacks: ["HTML", "CSS", "JAVASCRIPT", "CAFE24"],
       description: ["멤버십 페이지 제작", "대여 캘린더 구현", "멤버십 기능 연동"],
-      pc: [`${imgPath}/vividgolf/details/pc/vivid_pc_membership`, `${imgPath}/vividgolf/details/pc/vivid_pc_calendar`],
+      pc: [`${IMG_PATH}/vividgolf/details/pc/vivid_pc_membership`, `${IMG_PATH}/vividgolf/details/pc/vivid_pc_calendar`],
       mob: [
-        `${imgPath}/vividgolf/details/mob/vivid_mob_membership`,
-        `${imgPath}/vividgolf/details/mob/vivid_mob_calendar`,
+        `${IMG_PATH}/vividgolf/details/mob/vivid_mob_membership`,
+        `${IMG_PATH}/vividgolf/details/mob/vivid_mob_calendar`,
       ],
       site: {
         name: "비비드골프",
@@ -241,196 +242,294 @@
     },
   };
 
-  const createDetailSwiper = (type) => {
-    const SPEED = 600;
-    return new Swiper(`.modal .${type} .swiper-container`, {
-      slidesPerView: 1,
-      effect: "fade", //fade 효과일 때 슬라이드 이미지가 쌓이는 느낌 그림자 이미지가 점점 진하게 드리움 이 현상을 막기 위해 아래 옵션 추가
-      fadeEffect: {
-        crossFade: true,
-      },
-      //swiper js display:none 상태에서 작동하지 않을 때 display:none 요소에서 block이 될 때 슬라이드는 작동되지 않는다. 이때 아래 옵션값을 넣어 초기화 해준다.
-      observer: true,
-      observeParents: true,
-      speed: SPEED,
-      loop: true,
-      pagination: {
-        type: `fraction`,
-        el: `.modal_area .${type}.swiper-pagination`,
-        clickable: true,
-      },
-      navigation: {
-        nextEl: `.modal_area .${type}.swiper-button-next`,
-        prevEl: `.modal_area .${type}.swiper-button-prev`,
-      },
-      on: {
-        slideChangeTransitionStart: function () {
-          // 이미지 슬라이드 완료됐을 때 이미지들 height 를 현재 보여지고 있는 이미지 height 값에 맞춤
-          const swiperCtElm = document.querySelector(`.modal .${type} .swiper-container`);
-          const activeSlideElm = document.querySelector(
-            `.modal .${type} .swiper-slide[data-swiper-slide-index='${this.realIndex}']`
-          );
-          const activeImgElm = document.querySelector(
-            `.modal .${type} .swiper-slide[data-swiper-slide-index='${this.realIndex}'] img`
-          );
+  class PaintPage {
+    constructor() {
+      this.curItemName = ""
+    }
 
-          const elseImgElms = document.querySelectorAll(
-            `.modal .${type} .swiper-slide:not([data-swiper-slide-index='${this.realIndex}']) img`
-          );
+    pushSwiperSlide(elm) {
+      const pFDetail = details[elm.dataset.item];
 
-          activeImgElm.style.height = "auto";
-          swiperCtElm.scrollTo({ top: 0, left: 0 });
-          elseImgElms.forEach((elseImgElm) => {
-            setTimeout(() => {
-              if (activeImgElm.clientHeight < activeSlideElm.clientHeight) {
-                activeSlideElm.classList.add("flex-center");
-              } else {
-                activeSlideElm.classList.remove("flex-center");
-              }
-              elseImgElm.style.height = activeImgElm.clientHeight + "px";
-            }, 200);
-          });
+      pFDetail.pc.forEach((pcImgSrc) => {
+        const newSwiperSlideElm = this.createSwiperSlide(pcImgSrc, "pc");
+        const pcModalSwipeWrapElm = document.querySelector(".modal_area .pc .swiper-wrapper");
+
+        pcModalSwipeWrapElm.appendChild(newSwiperSlideElm);
+      });
+      pFDetail.mob.forEach((mobImgSrc) => {
+        const newSwiperSlideElm = this.createSwiperSlide(mobImgSrc, "mob");
+        const mobModalSwipeWrapElm = document.querySelector(".modal_area .mob .swiper-wrapper");
+
+        mobModalSwipeWrapElm.appendChild(newSwiperSlideElm);
+      });
+
+      if (prevPcSwiper && prevMobSwiper) {
+        prevPcSwiper.destroy();
+        prevMobSwiper.destroy();
+      }
+
+      prevPcSwiper = this.createDetailSwiper("pc");
+      prevMobSwiper = this.createDetailSwiper("mob");
+      prevPcSwiper.update();
+      prevMobSwiper.update();
+
+      document.querySelectorAll(".modal_area .swiper-notification").forEach((notificationElm) => {
+        notificationElm.remove();
+      });
+      this.onModal(elm);
+    };
+
+    paintPfDetail(elm) {
+      document.body.style.overflow = "hidden"
+      let stackStrElms = "";
+      let noteStrElms = "";
+
+      this.curItemName = elm.dataset.item;
+      const pFDetail = details[this.curItemName];
+
+      const modalPfNameElm = document.querySelector(".modal_area .detail .name");
+      const modalPfStacksElm = document.querySelector(".modal_area .detail .stacks");
+      const modalPfNoteElm = document.querySelector(".modal_area .detail .notes");
+      const siteElm = document.querySelector(".modal_area .detail .site_area a");
+
+      modalPfNameElm.innerText = pFDetail.title;
+      pFDetail.stacks.forEach((stack) => {
+        stackStrElms += `<div class="stack">${stack}</div>`;
+      });
+      pFDetail.description.forEach((descript) => {
+        noteStrElms += `<div class="note"><span>${descript}</span></div>`;
+      });
+
+      modalPfStacksElm.innerHTML = stackStrElms;
+      modalPfNoteElm.innerHTML = noteStrElms;
+
+      siteElm.innerHTML = pFDetail.site.name;
+      siteElm.href = pFDetail.site.url;
+    };
+  }
+
+  class Pagination extends PaintPage {
+    constructor() {
+      super();
+      this.prevPageBtnElm = document.getElementById("prevPageBtn")
+      this.nextPageBtnElm = document.getElementById("nextPageBtn")
+    }
+
+    clearModalSwiperWrap() {
+      document.querySelector(".modal_area .pc .swiper-wrapper").innerHTML = "";
+      document.querySelector(".modal_area .mob .swiper-wrapper").innerHTML = "";
+    };
+
+    getCurItemIndex(key) {
+      const keys = Object.keys(details);
+      const currentIndex = keys.indexOf(key);
+    }
+    getPrevItemName(key) {
+      const currentIndex = this.getCurItemIndex(key);
+
+      if (currentIndex > 0) {
+        const nextKey = keys[currentIndex - 1];
+        return nextKey
+      } else {
+        return keys[keys.length - 1];
+      }
+    }
+
+    getNextItemName(key) {
+      const currentIndex = this.getCurItemIndex(key);
+
+      if (currentIndex < keys.length - 1) {
+        const nextKey = keys[currentIndex + 1];
+        return nextKey
+      } else {
+        return keys[0];
+      }
+    }
+
+    goTop() {
+      document.querySelectorAll(".swiper-container").forEach(elm => {
+        elm.scrollTo({
+          left: 0,
+          top: 0
+        })
+      })
+    }
+
+    onPrevPage() {
+      this.clearModalSwiperWrap();
+      const prevItemName = this.getPrevItemName(this.curItemName);
+
+      const itemElm = document.querySelector(`#portfolio .item[data-item=${prevItemName}]`);
+      this.paintPfDetail(itemElm);
+      this.pushSwiperSlide(itemElm);
+      this.goTop();
+    }
+    onNextPage() {
+      this.clearModalSwiperWrap();
+      const nextItemName = this.getNextItemName(this.curItemName);
+
+      const itemElm = document.querySelector(`#portfolio .item[data-item=${nextItemName}]`);
+      this.paintPfDetail(itemElm);
+      this.pushSwiperSlide(itemElm);
+      this.goTop();
+    }
+
+    handler() {
+      this.prevPageBtnElm.addEventListener("click", this.onPrevPage.bind(this))
+      this.nextPageBtnElm.addEventListener("click", this.onNextPage.bind(this))
+    }
+
+  }
+
+  class Portfolio extends Pagination {
+    constructor() {
+      super();
+    }
+
+    createDetailSwiper(type) {
+      const SPEED = 600;
+      return new Swiper(`.image_area .${type} .swiper-container`, {
+        slidesPerView: 1,
+
+        //swiper js display:none 상태에서 작동하지 않을 때 display:none 요소에서 block이 될 때 슬라이드는 작동되지 않는다. 이때 아래 옵션값을 넣어 초기화 해준다.
+        observer: true,
+        observeParents: true,
+        speed: SPEED,
+        loop: true,
+        pagination: {
+          type: `fraction`,
+          el: `.modal_area .${type}.swiper-pagination`,
+          clickable: true,
         },
-      },
-    });
-  };
+        navigation: {
+          nextEl: `.modal_area .${type}.swiper-button-next`,
+          prevEl: `.modal_area .${type}.swiper-button-prev`,
+        },
+        on: {
+          slideChangeTransitionStart: function() {
+            // 이미지 슬라이드 완료됐을 때 이미지들 height 를 현재 보여지고 있는 이미지 height 값에 맞춤
+            const swiperCtElm = document.querySelector(`.image_area .${type} .swiper-container`);
+            const activeSlideElm = document.querySelector(
+              `.image_area .${type} .swiper-slide[data-swiper-slide-index='${this.realIndex}']`
+            );
+            const activeImgElm = document.querySelector(
+              `.image_area .${type} .swiper-slide[data-swiper-slide-index='${this.realIndex}'] img`
+            );
 
-  const getItemElms = () => {
-    return document.querySelectorAll(".item");
-  };
-  const getPcModalSwiperWrapElm = () => {
-    return document.querySelector(".modal_area .pc .swiper-wrapper");
-  };
-  const getMobModalSwiperWrapElm = () => {
-    return document.querySelector(".modal_area .mob .swiper-wrapper");
-  };
+            const elseImgElms = document.querySelectorAll(
+              `.image_area .${type} .swiper-slide:not([data-swiper-slide-index='${this.realIndex}']) img`
+            );
 
-  const clearModalSwiperWrap = () => {
-    getPcModalSwiperWrapElm().innerHTML = "";
-    getMobModalSwiperWrapElm().innerHTML = "";
-  };
+            if (!activeImgElm) return;
+            activeImgElm.style.height = "auto";
 
-  const onModal = (elm) => {
-    const activeItem = elm.dataset.item;
-    if (activeItem === "olola") {
-      // 오로라 렌즈는 PC , MOB 디자인이 같기 때문에 PC MODAL 에서도 모바일 스타일 적용
-      document.querySelector(".modal_area .pc").classList.add("mob_st");
-    } else {
-      document.querySelector(".modal_area .pc").classList.remove("mob_st");
+
+            swiperCtElm.scrollTo({
+              top: 0,
+              left: 0
+            });
+            elseImgElms.forEach((elseImgElm) => {
+              setTimeout(() => {
+                if (activeImgElm.clientHeight
+
+                  <
+                  activeSlideElm.clientHeight) {
+                  activeSlideElm.classList.add("flex-center");
+                } else {
+                  activeSlideElm.classList.remove("flex-center");
+                }
+                elseImgElm.style.height = activeImgElm.clientHeight + "px";
+              }, 200);
+            });
+          },
+        },
+      });
+    };
+
+    getItemElms() {
+      return document.querySelectorAll(".item");
+    };
+
+
+    onModal(elm) {
+      const activeItem = elm.dataset.item;
+      if (activeItem === "olola") { // 오로라 렌즈는 PC , MOB 디자인이 같기 때문에 PC MODAL 에서도 모바일 스타일 적용
+        document.querySelector(".modal_area .pc").classList.add("mob_st");
+      } else {
+        document.querySelector(".modal_area .pc").classList.remove("mob_st");
+      }
+      const modalAreaElm = document.querySelector(".modal_area");
+      modalAreaElm.classList.add("on");
+      modalAreaElm.classList.remove("mob");
+      modalAreaElm.classList.add("pc");
+      modalAreaElm.querySelector(".mob").classList.remove("on");
+      modalAreaElm.querySelector(".pc").classList.add("on");
+      document.getElementById("changeBtn").dataset.currentType = "pc";
+    };
+
+    createSwiperSlide(imgURI, type) {
+      const modalSwipeWrapElm = document.querySelector(`.modal_area .${type} .swiper-wrapper`);
+      const newSwiperSlideElm = document.createElement("div");
+      newSwiperSlideElm.classList.add("swiper-slide");
+      newSwiperSlideElm.classList.add("img-box");
+      newSwiperSlideElm.innerHTML = `<picture>` +
+        `
+        <source srcset="${imgURI}.webp" type="image/webp" />` +
+        `<img src="${imgURI}.png" />` +
+        `
+      </picture>`;
+
+      return newSwiperSlideElm;
     }
 
-    const modalAreaElm = document.querySelector(".modal_area");
-    modalAreaElm.classList.add("on");
-    modalAreaElm.classList.remove("mob");
-    modalAreaElm.classList.add("pc");
-    modalAreaElm.querySelector(".mob").classList.remove("on");
-    modalAreaElm.querySelector(".pc").classList.add("on");
-    document.getElementById("changeBtn").dataset.currentType = "pc";
-  };
+    itemsHandler() {
+      const items = this.getItemElms();
 
-  const createSwiperSlide = (imgURI, type) => {
-    const modalSwipeWrapElm = document.querySelector(`.modal_area .${type} .swiper-wrapper`);
-    const newSwiperSlideElm = document.createElement("div");
-    newSwiperSlideElm.classList.add("swiper-slide");
-    newSwiperSlideElm.classList.add("img-box");
-    newSwiperSlideElm.innerHTML =
-      `<picture>` +
-      `<source srcset="${imgURI}.webp" type="image/webp"/>` +
-      `<img src="${imgURI}.png" />` +
-      `</picture>`;
+      items.forEach((item) => {
+        item.addEventListener("click", () => {
+          this.clearModalSwiperWrap();
+          this.paintPfDetail(item);
+          this.pushSwiperSlide(item);
+        });
 
-    return newSwiperSlideElm;
-  };
+        item.addEventListener("mouseover", () => {
+          this.getItemElms().forEach((itemElm) => {
+            if (item === itemElm) {
+              item.classList.remove("off");
+              item.classList.add("on");
+            } else {
+              itemElm.classList.remove("on");
+              itemElm.classList.add("off");
+            }
+          });
+        });
 
-  const pushSwiperSlide = (elm) => {
-    const pFDetail = details[elm.dataset.item];
-
-    pFDetail.pc.forEach((pcImgSrc) => {
-      const newSwiperSlideElm = createSwiperSlide(pcImgSrc, "pc");
-      const pcModalSwipeWrapElm = document.querySelector(".modal_area .pc .swiper-wrapper");
-
-      pcModalSwipeWrapElm.appendChild(newSwiperSlideElm);
-    });
-    pFDetail.mob.forEach((mobImgSrc) => {
-      const newSwiperSlideElm = createSwiperSlide(mobImgSrc, "mob");
-      const mobModalSwipeWrapElm = document.querySelector(".modal_area .mob .swiper-wrapper");
-
-      mobModalSwipeWrapElm.appendChild(newSwiperSlideElm);
-    });
-
-    if (prevPcSwiper && prevMobSwiper) {
-      prevPcSwiper.destroy();
-      prevMobSwiper.destroy();
+        item.addEventListener("mouseleave", () => {
+          this.getItemElms().forEach((itemElm) => {
+            itemElm.classList.remove("off");
+            itemElm.classList.remove("on");
+          });
+        });
+      });
     }
 
-    prevPcSwiper = createDetailSwiper("pc");
-    prevMobSwiper = createDetailSwiper("mob");
-    prevPcSwiper.update();
-    prevMobSwiper.update();
+    handler() {
+      super.handler();
+      this.itemsHandler();
+    }
 
-    document.querySelectorAll(".modal_area .swiper-notification").forEach((notificationElm) => {
-      notificationElm.remove();
-    });
-    onModal(elm);
-  };
+    init() {
+      this.handler();
+    }
+  }
 
-  const paintPfDetail = (elm) => {
-    let stackStrElms = "";
-    let noteStrElms = "";
-    const pFDetail = details[elm.dataset.item];
-    const modalPfNameElm = document.querySelector(".modal_area .detail .name");
-    const modalPfStacksElm = document.querySelector(".modal_area .detail .stacks");
-    const modalPfNoteElm = document.querySelector(".modal_area .detail .notes");
-    const siteElm = document.querySelector(".modal_area .detail .site_area a");
 
-    modalPfNameElm.innerText = pFDetail.title;
-    pFDetail.stacks.forEach((stack) => {
-      stackStrElms += `<div class="stack">${stack}</div>`;
-    });
-    pFDetail.description.forEach((descript) => {
-      noteStrElms += `<div class="note"><span>${descript}</span></div>`;
-    });
-
-    modalPfStacksElm.innerHTML = stackStrElms;
-    modalPfNoteElm.innerHTML = noteStrElms;
-
-    siteElm.innerHTML = pFDetail.site.name;
-    siteElm.href = pFDetail.site.url;
-  };
-
-  const items = getItemElms();
-  items.forEach((item) => {
-    item.addEventListener("click", () => {
-      clearModalSwiperWrap();
-      paintPfDetail(item);
-      pushSwiperSlide(item);
-    });
-
-    item.addEventListener("mouseover", () => {
-      getItemElms().forEach((itemElm) => {
-        if (item === itemElm) {
-          item.classList.remove("off");
-          item.classList.add("on");
-        } else {
-          itemElm.classList.remove("on");
-          itemElm.classList.add("off");
-        }
-      });
-    });
-    item.addEventListener("mouseleave", () => {
-      getItemElms().forEach((itemElm) => {
-        itemElm.classList.remove("off");
-        itemElm.classList.remove("on");
-      });
-    });
-  });
 
   function detectWebpSupport() {
     const image = new Image();
     // 1px x 1px WebP 이미지
     const webpdata = "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=";
     const callback = (event) => {
-      // if the event is from 'onload', check the see if the image's width is 1 pixel (which indicates support). otherwise, it fails
       const result = event?.type === "load" && image.width === 1;
       if (result) {
         document.body.classList.add("webp");
@@ -444,4 +543,9 @@
     image.src = webpdata;
   }
   detectWebpSupport();
+
+  window.addEventListener(("load"), () => {
+    const portfolio = new Portfolio();
+    portfolio.init()
+  })
 </script>
