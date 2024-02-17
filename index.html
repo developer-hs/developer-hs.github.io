@@ -1,147 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>섭형</title>
-    <link rel="stylesheet" href="/assets/css/index.css" />
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/modal.css" />
-    <script type="module" src="/assets/js/component/component.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  </head>
-  <body>
-    <div class="modal_area pc" id="importedModal"></div>
-    <header>
-      <div class="nav_area">
-        <div class="nav" data-nav-name="about">ABOUT</div>
-        <div class="nav" data-nav-name="portfolio">PORTFOLIO</div>
-        <div class="nav" data-nav-name="contact">CONTACT</div>
-      </div>
-      <div class="logo img-box"><img src="/assets/imgs/logo.png" alt="logo" /></div>
-    </header>
-    <div class="banner_area" id="bannerArea">
-      <div class="signboard_area">
-        <div class="signboard">
-          <div class="circle_box">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-              <circle cx="10" cy="10" r="10" fill="#ED6A5E" />
-              <circle cx="40" cy="10" r="10" fill="#F4BE4F" />
-              <circle cx="70" cy="10" r="10" fill="#61C454" />
-            </svg>
-          </div>
-          <div>HYEONG SEOP</div>
-          <div>FULLSTACK DEVELOPER</div>
-          <div class="contact_area img-box" id="contactBtn">
-            <img src="/assets/imgs/contact.svg" alt="contact" />
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>섭형</title>
+  <link rel="stylesheet" href="/assets/css/index.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/modal.css" />
+  <script type="module" src="/assets/js/component/component.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+  <div class="modal_area pc" id="importedModal"></div>
+  <header>
+    <div class="nav_area">
+      <div class="nav" data-nav-name="about">ABOUT</div>
+      <div class="nav" data-nav-name="portfolio">PORTFOLIO</div>
+      <div class="nav" data-nav-name="contact">CONTACT</div>
+    </div>
+    <div class="logo img-box"><img src="/assets/imgs/logo.png" alt="logo" /></div>
+  </header>
+  <div class="banner_area" id="bannerArea">
+    <div class="signboard_area">
+      <div class="signboard">
+        <div class="circle_box">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+            <circle cx="10" cy="10" r="10" fill="#ED6A5E" />
+            <circle cx="40" cy="10" r="10" fill="#F4BE4F" />
+            <circle cx="70" cy="10" r="10" fill="#61C454" />
+          </svg>
+        </div>
+        <div>HYEONG SEOP</div>
+        <div>FULLSTACK DEVELOPER</div>
+        <div class="contact_area img-box" id="contactBtn">
+          <img src="/assets/imgs/contact.svg" alt="contact" />
         </div>
       </div>
     </div>
-    <div class="about_area" data-item-name="about">
-      <canvas id="bgCanvas"></canvas>
-      <div class="content_area">
-        <div class="title">About</div>
-        <div class="content">
-          <div>Javascript, HTML, CSS 및 Node.js를 사용하여 다양한 웹 프로젝트를 개발하는 열정적인 개발자입니다.</div>
-          <div>
-            주로 CAFE24 작업을 진행하며, 이를 통해 고객 만족과 사용자 경험을 높이는 다양한 웹사이트와 애플리케이션을
-            구축해 왔습니다.
-          </div>
-          <div>
-            작은 개인 쇼핑몰 부터 대규모 전자상거래 웹사이트까지, 항상 최신 웹 기술을 사용하여 기능과 디자인 면에서
-            사용자의 필요에 맞는 결과물을 제공하려 노력하였습니다.
-          </div>
-          <div>
-            제 포트폴리오를 통해 저의 소개와 함께 제 작업 방식과 성공 사례를 둘러보시고 만약 궁금한 점이 있으시거나 추가
-            정보가 필요하시면 언제든지 연락해 주세요.
-          </div>
-          <div>함께 좋은 결과물을 만들어 가는 데 기여하고 싶습니다.</div>
+  </div>
+  <div class="about_area" data-item-name="about">
+    <canvas id="bgCanvas"></canvas>
+    <div class="content_area">
+      <div class="title">About</div>
+      <div class="content">
+        <div>Javascript, HTML, CSS 및 Node.js를 사용하여 다양한 웹 프로젝트를 개발하는 열정적인 개발자입니다.</div>
+        <div>
+          주로 CAFE24 작업을 진행하며, 이를 통해 고객 만족과 사용자 경험을 높이는 다양한 웹사이트와 애플리케이션을
+          구축해 왔습니다.
         </div>
-      </div>
-      <div class="marquee-for-main marquee-for-main_1">
-        <span class="track"
-          >DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER! &nbsp;&nbsp;&nbsp;DEVELOPER!</span
-        >
-      </div>
-      <div class="marquee-for-main marquee-for-main_2">
-        <span class="track"
-          >DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
-          DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER! &nbsp;&nbsp;&nbsp;DEVELOPER!</span
-        >
+        <div>
+          작은 개인 쇼핑몰 부터 대규모 전자상거래 웹사이트까지, 항상 최신 웹 기술을 사용하여 기능과 디자인 면에서
+          사용자의 필요에 맞는 결과물을 제공하려 노력하였습니다.
+        </div>
+        <div>
+          제 포트폴리오를 통해 저의 소개와 함께 제 작업 방식과 성공 사례를 둘러보시고 만약 궁금한 점이 있으시거나 추가
+          정보가 필요하시면 언제든지 연락해 주세요.
+        </div>
+        <div>함께 좋은 결과물을 만들어 가는 데 기여하고 싶습니다.</div>
       </div>
     </div>
-    <div class="portfolio_area" data-item-name="portfolio">
-      <div class="title">PORTFOLIO</div>
-      <div class="portfolios" id="importedPortFolios"></div>
+    <div class="marquee-for-main marquee-for-main_1">
+      <span class="track">DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER! &nbsp;&nbsp;&nbsp;DEVELOPER!</span>
     </div>
-    <div class="contact_input_area" data-item-name="contact">
-      <div class="title">Contact</div>
-      <div class="write_date_area">
-        <span>Wrriten on</span>
-        <span id="writeDate"></span>
-      </div>
-      <input id="name" type="text" placeholder="이름(상호)" />
-      <input id="phone" type="text" placeholder="전화번호" />
-      <input id="email" type="email" placeholder="이메일" />
-      <textarea id="message" placeholder="문의내용"></textarea>
-      <div class="submit-btn" id="emailSubmitBtn">Submit</div>
-      <div class="scroll_up_btn img-box" id="scrollUpBtn">
-        <img src="/assets/imgs/icons/up_btn.svg" alt="위로향하는 화살표" />
-      </div>
+    <div class="marquee-for-main marquee-for-main_2">
+      <span class="track">DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        &nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!
+        DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER!&nbsp;&nbsp;&nbsp;DEVELOPER! &nbsp;&nbsp;&nbsp;DEVELOPER!</span>
     </div>
-  </body>
-  <script type="module">
-    import importHTML from "/assets/js/import.js";
+  </div>
+  <div class="portfolio_area" data-item-name="portfolio">
+    <div class="title">PORTFOLIO</div>
+    <div class="portfolios" id="importedPortFolios"></div>
+  </div>
+  <div class="contact_input_area" data-item-name="contact">
+    <div class="title">Contact</div>
+    <div class="write_date_area">
+      <span>Wrriten on</span>
+      <span id="writeDate"></span>
+    </div>
+    <input id="name" type="text" placeholder="이름(상호)" />
+    <input id="phone" type="text" placeholder="전화번호" />
+    <input id="email" type="email" placeholder="이메일" />
+    <textarea id="message" placeholder="문의내용"></textarea>
+    <div class="submit-btn" id="emailSubmitBtn">Submit</div>
+    <div class="scroll_up_btn img-box" id="scrollUpBtn">
+      <img src="/assets/imgs/icons/up_btn.svg" alt="위로향하는 화살표" />
+    </div>
+  </div>
+</body>
 
-    const importing = async () => {
-      await importHTML("/components/portfolios/portfolio.html", "importedPortFolios");
-      await importHTML("/components/common/modal.html", "importedModal");
-    };
+<script type="module">
+  import importHTML from "/assets/js/import.js";
 
-    importing();
-  </script>
+  const importing = async () => {
+    await importHTML("/components/portfolios/portfolio.html", "importedPortFolios");
+    await importHTML("/components/common/modal.html", "importedModal");
+  };
 
-  <script defer src="/assets/js/aboutBg.js"></script>
-  <script defer src="/assets/js/email.js"></script>
-  <script type="module">
-    import Navigation from "/assets/js/navigation.js";
-    const navigation = new Navigation();
+  importing();
+</script>
 
-    const prevContactInit = () => {
-      const prevContact = JSON.parse(localStorage.getItem("prev_contact"));
-      const prevName = prevContact.name;
-      const prevPhone = prevContact.phone;
-      const prevEmail = prevContact.email;
-      const prevMessage = prevContact.message;
-      const createdAt = prevContact.created_at;
+<script defer src="/assets/js/aboutBg.js"></script>
+<script defer src="/assets/js/email.js"></script>
+<script type="module">
+  import Navigation from "/assets/js/navigation.js";
+  const navigation = new Navigation();
 
-      const nameElm = document.getElementById("name");
-      const phoneElm = document.getElementById("phone");
-      const emailElm = document.getElementById("email");
-      const messageElm = document.getElementById("message");
-      const writeDateAreaElm = document.querySelector(".write_date_area");
-      const writeDateElm = document.getElementById("writeDate");
+  const prevContactInit = () => {
+    const prevContact = JSON.parse(localStorage.getItem("prev_contact"));
+    const prevName = prevContact.name;
+    const prevPhone = prevContact.phone;
+    const prevEmail = prevContact.email;
+    const prevMessage = prevContact.message;
+    const createdAt = prevContact.created_at;
 
-      nameElm.value = prevName;
-      phoneElm.value = prevPhone;
-      emailElm.value = prevEmail;
-      messageElm.innerText = prevMessage;
-      writeDateAreaElm.classList.add("on");
-      writeDateElm.innerText = createdAt;
-    };
+    const nameElm = document.getElementById("name");
+    const phoneElm = document.getElementById("phone");
+    const emailElm = document.getElementById("email");
+    const messageElm = document.getElementById("message");
+    const writeDateAreaElm = document.querySelector(".write_date_area");
+    const writeDateElm = document.getElementById("writeDate");
 
-    prevContactInit();
-  </script>
+    nameElm.value = prevName;
+    phoneElm.value = prevPhone;
+    emailElm.value = prevEmail;
+    messageElm.innerText = prevMessage;
+    writeDateAreaElm.classList.add("on");
+    writeDateElm.innerText = createdAt;
+  };
+
+  prevContactInit();
+</script>
+<script type="module">
+  import Modal from "/assets/js/modal/modal.js";
+
+  window.addEventListener("load", () => {
+
+    (function detectWebpSupport() {
+      const image = new Image();
+      // 1px x 1px WebP 이미지
+      const webpdata = "data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=";
+      const callback = (event) => {
+        const result = event?.type === "load" && image.width === 1;
+        if (result) {
+          document.body.classList.add("webp");
+        } else {
+          document.body.classList.add("no-webp");
+        }
+      };
+
+      image.onerror = callback;
+      image.onload = callback;
+      image.src = webpdata;
+    })();
+
+
+
+    const modal = new Modal();
+    modal.init();
+  });
+</script>
+
 </html>

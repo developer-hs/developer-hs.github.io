@@ -1,3 +1,9 @@
+<div class="pf_pagination">
+  <span class="current_pf_page" id="currentPFPage"></span>
+  <span>/</span>
+  <span class="total_pf_page" id="totalPFPage"></span>
+</div>
+
 <div class="page_btn" id="prevPageBtn">prev</div>
 <div class="page_btn" id="nextPageBtn">next</div>
 
@@ -49,82 +55,3 @@
   <div class="mob swiper-button-prev swiper-button"></div>
   <div class="mob swiper-button-next swiper-button"></div>
 </div>
-
-<script>
-  class Modal {
-    constructor() {
-      this.init();
-    }
-
-    getModalAreaElm = () => {
-      return document.querySelector(".modal_area");
-    };
-    getChangeBtnElm = () => {
-      return document.getElementById("changeBtn");
-    };
-
-    modalClose = (elm) => {
-      if (elm.id === "importedModal") {
-        document.body.style.overflow = "auto"
-        this.getModalAreaElm().classList.remove("on");
-        const swiperWrapElms = document.querySelectorAll(".modal_area .swiper-wrapper");
-        swiperWrapElms.forEach((swiperWrapElm) => {
-          swiperWrapElm.innerHTML = "";
-        });
-      }
-    };
-
-    modalCloseHandler = () => {
-      this.getModalAreaElm().addEventListener("click", (e) => {
-        this.modalClose(e.target);
-      });
-    };
-
-    changeViewType = () => {
-      const changeBtnElm = this.getChangeBtnElm();
-      const modalAreaElm = document.querySelector(".modal_area");
-
-      changeBtnElm.classList.add("active");
-      setTimeout(() => {
-        changeBtnElm.classList.remove("active");
-      }, 1000);
-
-      const currentType = changeBtnElm.dataset.currentType;
-      const pcModalElm = document.querySelector(".modal_area .pc");
-      const mobModalElm = document.querySelector(".modal_area .mob");
-
-      switch (currentType) {
-        case "pc":
-          this.getChangeBtnElm().dataset.currentType = "mob";
-          modalAreaElm.classList.remove("pc");
-          modalAreaElm.classList.add("mob");
-          pcModalElm.classList.remove("on");
-          mobModalElm.classList.add("on");
-          break;
-        case "mob":
-          modalAreaElm.classList.remove("mob");
-          modalAreaElm.classList.add("pc");
-          this.getChangeBtnElm().dataset.currentType = "pc";
-          mobModalElm.classList.remove("on");
-          pcModalElm.classList.add("on");
-          break;
-      }
-    };
-
-    chageTypeBtnHandler = () => {
-      const changeBtnElm = this.getChangeBtnElm();
-      changeBtnElm.addEventListener("click", this.changeViewType);
-    };
-
-    handler = () => {
-      this.modalCloseHandler();
-      this.chageTypeBtnHandler();
-    };
-
-    init = () => {
-      this.handler();
-    };
-  }
-
-  const modal = new Modal();
-</script>
