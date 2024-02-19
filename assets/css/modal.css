@@ -156,13 +156,14 @@
 
 .modal_area .stacks {
   display: flex;
+  flex-wrap: wrap;
   padding: 0 0 32px;
 }
 
 .modal_area .stack {
   color: #fff;
   border-radius: 20px;
-  margin: 0 4px;
+  margin: 6px 4px 0;
   padding: 4px;
   background-color: var(--color-primary);
   box-shadow: 1px 1px 0px 0px #000;
@@ -367,6 +368,22 @@
 .page_btn#nextPageBtn {
   right: 0;
   border-radius: 150px 0 0 150px;
+}
+
+.pf_pagination {
+  position: absolute;
+  padding: 10px;
+  top: 10px;
+  left: 10px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: #000;
+}
+
+.pf_pagination span {
+  font-family: "SBAggro";
+  font-size: 24px;
+  font-weight: 500;
 }
 
 @media all and (max-width: 960px) {

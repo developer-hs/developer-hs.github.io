@@ -1,10 +1,29 @@
 import PaintPage from "./paintPage.js";
 
 class Pagination extends PaintPage {
-  constructor() {
-    super();
+  constructor(itemSelector, details) {
+    super(itemSelector, details);
     this.prevPageBtnElm = document.getElementById("prevPageBtn");
     this.nextPageBtnElm = document.getElementById("nextPageBtn");
+    this._curItemName = "";
+
+    this.setTotalPageNum();
+  }
+
+  get curItemName() {
+    return this._curItemName;
+  }
+
+  set curItemName(value) {
+    this._curItemName = value;
+    // 여기에서 'example' 값이 변경되었을 때 실행하고 싶은 로직을 작성하면 됩니다.
+    console.log(`curItemName 값이 ${value}로 변경되었습니다.`);
+  }
+
+  setTotalPageNum() {
+    const totalPageNum = this.getPFDetailKeys().length;
+
+    document.getElementById("totalPFPage").innerText = totalPageNum;
   }
 
   clearModalSwiperWrap() {
@@ -12,39 +31,34 @@ class Pagination extends PaintPage {
     document.querySelector(".modal_area .mob .swiper-wrapper").innerHTML = "";
   }
 
-  getPFKeys() {
-    return Object.keys(this.details);
-  }
-
-  getPFDetailKeyIdx(key) {
-    const keys = this.getPFKeys();
-    const index = keys.indexOf(key);
-
-    return index;
-  }
-
   getPrevItemName(key) {
-    const keys = this.getPFKeys();
+    let prevKey;
+    const keys = this.getPFDetailKeys();
     const currentIndex = this.getPFDetailKeyIdx(key);
 
     if (currentIndex > 0) {
-      const nextKey = keys[currentIndex - 1];
-      return nextKey;
+      prevKey = keys[currentIndex - 1];
     } else {
-      return keys[keys.length - 1];
+      prevKey = keys[keys.length - 1];
     }
+
+    this.setCurItemName(prevKey);
+    return prevKey;
   }
 
   getNextItemName(key) {
-    const keys = this.getPFKeys();
+    let nextKey;
+    const keys = this.getPFDetailKeys();
     const currentIndex = this.getPFDetailKeyIdx(key);
 
     if (currentIndex < keys.length - 1) {
-      const nextKey = keys[currentIndex + 1];
-      return nextKey;
+      nextKey = keys[currentIndex + 1];
     } else {
-      return keys[0];
+      nextKey = keys[0];
     }
+
+    this.setCurItemName(nextKey);
+    return nextKey;
   }
 
   goTop() {
@@ -60,22 +74,24 @@ class Pagination extends PaintPage {
     this.clearModalSwiperWrap();
     const prevItemName = this.getPrevItemName(this.curItemName);
 
-    const itemElm = document.querySelector(`#portfolio .item[data-item=${prevItemName}]`);
-    this.paintPFDetail(itemElm);
+    const itemElm = document.querySelector(`${this.itemSelector}[data-item-name=${prevItemName}]`);
+    this.paintPFDetail(itemElm.dataset.itemName);
     this.pushSwiperSlide(itemElm);
     this.goTop();
   }
+
   onNextPage() {
     this.clearModalSwiperWrap();
     const nextItemName = this.getNextItemName(this.curItemName);
 
-    const itemElm = document.querySelector(`#portfolio .item[data-item=${nextItemName}]`);
-    this.paintPFDetail(itemElm);
+    const itemElm = document.querySelector(`${this.itemSelector}[data-item-name=${nextItemName}]`);
+    this.paintPFDetail(itemElm.dataset.itemName);
     this.pushSwiperSlide(itemElm);
     this.goTop();
   }
 
   handler() {
+    super.handler();
     this.prevPageBtnElm.addEventListener("click", this.onPrevPage.bind(this));
     this.nextPageBtnElm.addEventListener("click", this.onNextPage.bind(this));
   }

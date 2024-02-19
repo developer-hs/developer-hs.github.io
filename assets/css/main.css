@@ -2,6 +2,7 @@
   font-size: 0;
   box-sizing: border-box;
 }
+
 .title {
   font-family: "LuckiestGuy";
 }
@@ -133,12 +134,13 @@ header .logo {
 .portfolio_area .portfolio {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  width: 100%;
 }
 
 .portfolio_area .portfolio .item {
   cursor: pointer;
-  width: 30%;
+  width: calc(33% - 60px);
+  margin: 0 30px;
   border: 1px solid #000;
   background: var(--color-danger);
   box-shadow: 10px 10px 0px 0px #000;
@@ -188,6 +190,10 @@ header .logo {
   background: #0079ff;
   box-shadow: 1px 1px 0px 0px #000;
   color: #fff;
+}
+
+body .stack.backend {
+  background: var(--color-orange) !important;
 }
 
 .portfolio_area .portfolio .item .more_view {

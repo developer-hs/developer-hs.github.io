@@ -2,6 +2,7 @@
   --color-primary: #0079ff;
   --color-green: #00dfa2;
   --color-danger: #f25a5a;
+  --color-orange: #ee6425;
   --color-bg: #ffeeca;
 }
 body,
@@ -56,6 +57,10 @@ a {
 a:visited,
 a:hover {
   color: #000;
+}
+
+.bg-black {
+  background-color: #000 !important;
 }
 @font-face {
   font-family: "LuckiestGuy";

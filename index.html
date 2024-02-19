@@ -81,8 +81,12 @@
     </div>
   </div>
   <div class="portfolio_area" data-item-name="portfolio">
-    <div class="title">PORTFOLIO</div>
-    <div class="portfolios" id="importedPortFolios"></div>
+    <div class="title">PORTFOLIO&nbsp;(FE)</div>
+    <div class="portfolios" id="FEimportedPortFolios"></div>
+  </div>
+  <div class="portfolio_area" data-item-name="portfolio">
+    <div class="title">PORTFOLIO&nbsp;(BE)</div>
+    <div class="portfolios" id="BEimportedPortFolios"></div>
   </div>
   <div class="contact_input_area" data-item-name="contact">
     <div class="title">Contact</div>
@@ -105,7 +109,8 @@
   import importHTML from "/assets/js/import.js";
 
   const importing = async () => {
-    await importHTML("/components/portfolios/portfolio.html", "importedPortFolios");
+    await importHTML("/components/portfolios/portfolio_FE.html", "FEimportedPortFolios");
+    await importHTML("/components/portfolios/portfolio_BE.html", "BEimportedPortFolios");
     await importHTML("/components/common/modal.html", "importedModal");
   };
 
@@ -145,6 +150,10 @@
 </script>
 <script type="module">
   import Modal from "/assets/js/modal/modal.js";
+  import {
+    FEDetails,
+    BEDetails
+  } from "/assets/js/details.js"
 
   window.addEventListener("load", () => {
 
@@ -168,8 +177,11 @@
 
 
 
-    const modal = new Modal();
-    modal.init();
+    const frontendModal = new Modal("#portfolioFE .item", FEDetails);
+    frontendModal.init();
+
+    const backendModal = new Modal("#portfolioBE .item", BEDetails);
+    backendModal.init();
   });
 </script>
 
