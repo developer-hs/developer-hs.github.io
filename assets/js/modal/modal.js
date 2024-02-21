@@ -4,13 +4,24 @@ import Pagination from "./pagination.js";
  * @param { String } itemSelector HTML Selector
  */
 class Modal extends Pagination {
-  constructor(itemSelector, details) {
-    super(itemSelector, details);
+  constructor(modalSelector, options) {
+    super(modalSelector, options);
   }
 
   modalClose = (elm) => {
     if (elm.id === "importedModal") {
       document.body.style.overflow = "auto";
+      if (this.modalSelector) {
+        document.querySelector(this.modalSelector).classList.add("displaynone");
+      }
+
+      if (this.imageAreaSelector) {
+        document.querySelector(this.imageAreaSelector).classList.add("displaynone");
+      }
+
+      if (this.controllerSelector) {
+        document.querySelector(this.controllerSelector).classList.add("displaynone");
+      }
       document.querySelector(".modal_area").classList.remove("on");
       const swiperWrapElms = document.querySelectorAll(".modal_area .swiper-wrapper");
       swiperWrapElms.forEach((swiperWrapElm) => {
@@ -26,7 +37,7 @@ class Modal extends Pagination {
   };
 
   changeViewType = () => {
-    const changeBtnElm = document.getElementById("changeBtn");
+    const changeBtnElm = document.querySelector(`${this.modalSelector} .change_btn`);
     const modalAreaElm = document.querySelector(".modal_area");
 
     changeBtnElm.classList.add("active");
@@ -35,12 +46,12 @@ class Modal extends Pagination {
     }, 1000);
 
     const currentType = changeBtnElm.dataset.currentType;
-    const pcModalElm = document.querySelector(".modal_area .pc");
-    const mobModalElm = document.querySelector(".modal_area .mob");
+    const pcModalElm = document.querySelector(`${this.modalSelector} .pc`);
+    const mobModalElm = document.querySelector(`${this.modalSelector} .mob`);
 
     switch (currentType) {
       case "pc":
-        document.getElementById("changeBtn").dataset.currentType = "mob";
+        document.querySelector(`${this.modalSelector} .change_btn`).dataset.currentType = "mob";
         modalAreaElm.classList.remove("pc");
         modalAreaElm.classList.add("mob");
         pcModalElm.classList.remove("on");
@@ -49,7 +60,7 @@ class Modal extends Pagination {
       case "mob":
         modalAreaElm.classList.remove("mob");
         modalAreaElm.classList.add("pc");
-        document.getElementById("changeBtn").dataset.currentType = "pc";
+        document.querySelector(`${this.modalSelector} .change_btn`).dataset.currentType = "pc";
         mobModalElm.classList.remove("on");
         pcModalElm.classList.add("on");
         break;
@@ -57,7 +68,8 @@ class Modal extends Pagination {
   };
 
   chageTypeBtnHandler = () => {
-    const changeBtnElm = document.getElementById("changeBtn");
+    const changeBtnElm = document.querySelector(`${this.modalSelector} .change_btn`);
+
     changeBtnElm.addEventListener("click", this.changeViewType);
   };
 
@@ -73,25 +85,9 @@ class Modal extends Pagination {
     modalAreaElm.classList.add("on");
     modalAreaElm.classList.remove("mob");
     modalAreaElm.classList.add("pc");
-    modalAreaElm.querySelector(".mob").classList.remove("on");
-    modalAreaElm.querySelector(".pc").classList.add("on");
-    document.getElementById("changeBtn").dataset.currentType = "pc";
-  }
-
-  createSwiperSlide(imgURI, type) {
-    const modalSwipeWrapElm = document.querySelector(`.modal_area .${type} .swiper-wrapper`);
-    const newSwiperSlideElm = document.createElement("div");
-    newSwiperSlideElm.classList.add("swiper-slide");
-    newSwiperSlideElm.classList.add("img-box");
-    newSwiperSlideElm.innerHTML =
-      `<picture>` +
-      `
-        <source srcset="${imgURI}.webp" type="image/webp" />` +
-      `<img src="${imgURI}.png" />` +
-      `
-      </picture>`;
-
-    return newSwiperSlideElm;
+    modalAreaElm.querySelector(`${this.modalSelector} .mob`).classList.remove("on");
+    modalAreaElm.querySelector(`${this.modalSelector} .pc`).classList.add("on");
+    document.querySelector(`${this.modalSelector}  .change_btn`).dataset.currentType = "pc";
   }
 
   handler() {

@@ -1,40 +1,28 @@
 import PaintPage from "./paintPage.js";
 
 class Pagination extends PaintPage {
-  constructor(itemSelector, details) {
-    super(itemSelector, details);
-    this.prevPageBtnElm = document.getElementById("prevPageBtn");
-    this.nextPageBtnElm = document.getElementById("nextPageBtn");
-    this._curItemName = "";
-
-    this.setTotalPageNum();
-  }
-
-  get curItemName() {
-    return this._curItemName;
-  }
-
-  set curItemName(value) {
-    this._curItemName = value;
-    // 여기에서 'example' 값이 변경되었을 때 실행하고 싶은 로직을 작성하면 됩니다.
-    console.log(`curItemName 값이 ${value}로 변경되었습니다.`);
+  constructor(modalSelector, options) {
+    super(modalSelector, options);
+    this.controllerSelector = options.controllerSelector;
+    this.prevPageBtnElm = document.querySelector(`${this.controllerSelector} .prev_page_btn`);
+    this.nextPageBtnElm = document.querySelector(`${this.controllerSelector} .next_page_btn`);
   }
 
   setTotalPageNum() {
-    const totalPageNum = this.getPFDetailKeys().length;
+    const totalPageNum = this.getDetailKeys().length;
 
     document.getElementById("totalPFPage").innerText = totalPageNum;
   }
 
   clearModalSwiperWrap() {
-    document.querySelector(".modal_area .pc .swiper-wrapper").innerHTML = "";
-    document.querySelector(".modal_area .mob .swiper-wrapper").innerHTML = "";
+    document.querySelector(`${this.modalSelector} .pc .swiper-wrapper`).innerHTML = "";
+    document.querySelector(`${this.modalSelector} .mob .swiper-wrapper`).innerHTML = "";
   }
 
   getPrevItemName(key) {
     let prevKey;
-    const keys = this.getPFDetailKeys();
-    const currentIndex = this.getPFDetailKeyIdx(key);
+    const keys = this.getDetailKeys();
+    const currentIndex = this.getDetailKeyIdx(key);
 
     if (currentIndex > 0) {
       prevKey = keys[currentIndex - 1];
@@ -48,8 +36,8 @@ class Pagination extends PaintPage {
 
   getNextItemName(key) {
     let nextKey;
-    const keys = this.getPFDetailKeys();
-    const currentIndex = this.getPFDetailKeyIdx(key);
+    const keys = this.getDetailKeys();
+    const currentIndex = this.getDetailKeyIdx(key);
 
     if (currentIndex < keys.length - 1) {
       nextKey = keys[currentIndex + 1];
@@ -94,6 +82,14 @@ class Pagination extends PaintPage {
     super.handler();
     this.prevPageBtnElm.addEventListener("click", this.onPrevPage.bind(this));
     this.nextPageBtnElm.addEventListener("click", this.onNextPage.bind(this));
+
+    this.getItemElms().forEach((item) => {
+      item.addEventListener("click", () => {
+        this.setTotalPageNum();
+
+        document.querySelector(this.controllerSelector).classList.remove("displaynone");
+      });
+    });
   }
 }
 

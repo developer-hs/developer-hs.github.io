@@ -4,54 +4,118 @@
   <span class="total_pf_page" id="totalPFPage"></span>
 </div>
 
-<div class="page_btn" id="prevPageBtn">prev</div>
-<div class="page_btn" id="nextPageBtn">next</div>
+<div id="FEPageController" class="displaynone">
+  <div class="page_btn prev_page_btn" id="FEprevPageBtn">prev</div>
+  <div class="page_btn next_page_btn" id="FEnextPageBtn">next</div>
+</div>
 
-<div class="image_area">
-  <div class="pc on">
-    <div class="swiper-container">
-      <div class="swiper-wrapper"></div>
+<div id="BEPageController" class="displaynone">
+  <div class="page_btn prev_page_btn" id="BEprevPageBtn">prev</div>
+  <div class="page_btn next_page_btn" id="BEnextPageBtn">next</div>
+</div>
+
+<div class="displaynone" id="FEImageArea">
+  <div class="image_area">
+    <div class="pc on">
+      <div class="image_desc" id="pcImageDescription">
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper"></div>
+      </div>
+    </div>
+    <div class="mob">
+      <div class="swiper-container">
+        <div class="swiper-wrapper"></div>
+      </div>
     </div>
   </div>
-  <div class="mob">
-    <div class="swiper-container">
-      <div class="swiper-wrapper"></div>
+  <div class="detail_area">
+    <div class="change_btn" data-current-type="pc">
+      <img class="phone_ico" src="/assets/imgs/icons/phone.svg" alt="" />
+      <img class="pc_ico" src="/assets/imgs/icons/pc.svg" alt="" />
     </div>
+    <div class="detail">
+      <div class="name"></div>
+      <div class="stack_area">
+        <div class="title">STACKS</div>
+        <div class="stacks">
+          <div class="stack"></div>
+          <div class="stack"></div>
+          <div class="stack"></div>
+          <div class="stack"></div>
+        </div>
+      </div>
+      <div class="description">
+        <div class="title">DESCRIPTION</div>
+        <div class="notes">
+          <div class="note"><span></span></div>
+          <div class="note"><span></span></div>
+          <div class="note"><span></span></div>
+        </div>
+      </div>
+      <div class="site_area">
+        <div class="title">SITE</div>
+        <div><a href="javascript:void();" target="_blank"></a></div>
+      </div>
+    </div>
+    <div class="pc swiper-pagination"></div>
+    <div class="pc swiper-button-prev swiper-button"></div>
+    <div class="pc swiper-button-next swiper-button"></div>
+    <div class="mob swiper-pagination"></div>
+    <div class="mob swiper-button-prev swiper-button"></div>
+    <div class="mob swiper-button-next swiper-button"></div>
   </div>
 </div>
-<div class="detail_area">
-  <div class="change_btn" id="changeBtn" data-current-type="pc">
-    <img class="phone_ico" src="/assets/imgs/icons/phone.svg" alt="" />
-    <img class="pc_ico" src="/assets/imgs/icons/pc.svg" alt="" />
-  </div>
-  <div class="detail">
-    <div class="name"></div>
-    <div class="stack_area">
-      <div class="title">STACKS</div>
-      <div class="stacks">
-        <div class="stack"></div>
-        <div class="stack"></div>
-        <div class="stack"></div>
-        <div class="stack"></div>
+
+<div class="displaynone" id="BEImageArea">
+  <div class="image_area">
+    <div class="pc on">
+      <div class="image_desc" id="pcImageDescription">
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper"></div>
       </div>
     </div>
-    <div class="description">
-      <div class="title">DESCRIPTION</div>
-      <div class="notes">
-        <div class="note"><span></span></div>
-        <div class="note"><span></span></div>
-        <div class="note"><span></span></div>
+    <div class="mob">
+      <div class="swiper-container">
+        <div class="swiper-wrapper"></div>
       </div>
     </div>
-    <div class="site_area">
-      <div class="title">SITE</div>
-      <div><a href="javascript:void();" target="_blank"></a></div>
-    </div>
   </div>
-  <div class="pc swiper-pagination"></div>
-  <div class="pc swiper-button-prev swiper-button"></div>
-  <div class="pc swiper-button-next swiper-button"></div>
-  <div class="mob swiper-pagination"></div>
-  <div class="mob swiper-button-prev swiper-button"></div>
-  <div class="mob swiper-button-next swiper-button"></div>
+  <div class="detail_area">
+    <div class="change_btn" data-current-type="pc">
+      <img class="phone_ico" src="/assets/imgs/icons/phone.svg" alt="" />
+      <img class="pc_ico" src="/assets/imgs/icons/pc.svg" alt="" />
+    </div>
+    <div class="detail">
+      <div class="name"></div>
+      <div class="stack_area">
+        <div class="title">STACKS</div>
+        <div class="stacks">
+          <div class="stack"></div>
+          <div class="stack"></div>
+          <div class="stack"></div>
+          <div class="stack"></div>
+        </div>
+      </div>
+      <div class="description">
+        <div class="title">DESCRIPTION</div>
+        <div class="notes">
+          <div class="note"><span></span></div>
+          <div class="note"><span></span></div>
+          <div class="note"><span></span></div>
+        </div>
+      </div>
+      <div class="site_area">
+        <div class="title">SITE</div>
+        <div><a href="javascript:void();" target="_blank"></a></div>
+      </div>
+    </div>
+    <div class="pc swiper-pagination"></div>
+    <div class="pc swiper-button-prev swiper-button"></div>
+    <div class="pc swiper-button-next swiper-button"></div>
+    <div class="mob swiper-pagination"></div>
+    <div class="mob swiper-button-prev swiper-button"></div>
+    <div class="mob swiper-button-next swiper-button"></div>
+  </div>
 </div>

@@ -59,9 +59,13 @@ a:hover {
   color: #000;
 }
 
+.displaynone {
+  display: none !important;
+}
 .bg-black {
   background-color: #000 !important;
 }
+
 @font-face {
   font-family: "LuckiestGuy";
   src: url(/assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf) format("truetype");

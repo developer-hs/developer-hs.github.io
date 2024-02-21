@@ -70,6 +70,12 @@
 .image_area .mob .swiper-slide img {
   width: 40%;
 }
+
+#BEImageArea .image_area .pc.mob_st .swiper-slide img,
+#BEImageArea .image_area .mob .swiper-slide img {
+  width: 100%;
+}
+
 .image_area .swiper-container {
   background-color: #000;
   position: relative;
@@ -361,11 +367,11 @@
   color: #fff;
 }
 
-.page_btn#prevPageBtn {
+.page_btn.prev_page_btn {
   left: 0;
   border-radius: 0 150px 150px 0;
 }
-.page_btn#nextPageBtn {
+.page_btn.next_page_btn {
   right: 0;
   border-radius: 150px 0 0 150px;
 }
@@ -384,6 +390,18 @@
   font-family: "SBAggro";
   font-size: 24px;
   font-weight: 500;
+}
+
+.image_desc {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  width: 100%;
+  padding: 12px 20px 10px;
+  font-size: 16px;
 }
 
 @media all and (max-width: 960px) {

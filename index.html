@@ -14,6 +14,7 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
+
 <body>
   <div class="modal_area pc" id="importedModal"></div>
   <header>
@@ -85,7 +86,7 @@
     <div class="portfolios" id="FEimportedPortFolios"></div>
   </div>
   <div class="portfolio_area" data-item-name="portfolio">
-    <div class="title">PORTFOLIO&nbsp;(BE)</div>
+    <div class="title">PORTFOLIO&nbsp;(FE+BE)</div>
     <div class="portfolios" id="BEimportedPortFolios"></div>
   </div>
   <div class="contact_input_area" data-item-name="contact">
@@ -177,10 +178,18 @@
 
 
 
-    const frontendModal = new Modal("#portfolioFE .item", FEDetails);
+    const frontendModal = new Modal("#FEImageArea", {
+      itemSelector: "#portfolioFE .item",
+      controllerSelector: "#FEPageController",
+      details: FEDetails,
+    });
     frontendModal.init();
 
-    const backendModal = new Modal("#portfolioBE .item", BEDetails);
+    const backendModal = new Modal("#BEImageArea", {
+      itemSelector: "#portfolioBE .item",
+      controllerSelector: "#BEPageController",
+      details: BEDetails
+    });
     backendModal.init();
   });
 </script>
